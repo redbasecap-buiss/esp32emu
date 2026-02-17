@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <cstring>
 #include <string>
+#include <functional>
 #include "esp32emu_string.h"
 
 #define WL_CONNECTED    3
@@ -40,6 +41,7 @@ public:
     void mode(int m) { mode_ = m; }
 
     int begin(const char* ssid, const char* pass = nullptr) {
+        if (!wifi_check_()) return WL_DISCONNECTED;
         ssid_ = ssid ? ssid : "";
         (void)pass;
         connected_ = true;
@@ -68,6 +70,12 @@ public:
         (void)ssid; (void)pass; return true;
     }
     IPAddress softAPIP() { return IPAddress(192,168,4,1); }
+
+    // Board WiFi check callback (set by board init)
+    std::function<bool()> wifi_check_ = []() { return true; };
+
+public:
+    void setWiFiCheck(std::function<bool()> fn) { wifi_check_ = fn; }
 
 private:
     bool connected_ = false;

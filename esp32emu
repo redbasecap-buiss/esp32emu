@@ -16,10 +16,16 @@ usage() {
 esp32emu — Lightweight ESP32/Arduino emulator
 
 Usage:
-    esp32emu run <sketch.ino|sketch.cpp> [-- args...]
-    esp32emu build <sketch.ino|sketch.cpp> [-o output]
+    esp32emu run [--board <board>] <sketch.ino|sketch.cpp> [-- args...]
+    esp32emu build [--board <board>] <sketch.ino|sketch.cpp> [-o output]
     esp32emu test
     esp32emu version
+
+Boards:
+    esp32    ESP32 (default)
+    esp32s3  ESP32-S3
+    uno      Arduino Uno (ATmega328P)
+    mega     Arduino Mega (ATmega2560)
 
 Commands:
     run     Compile and run a sketch
@@ -28,7 +34,8 @@ Commands:
 
 Examples:
     esp32emu run examples/blink.cpp
-    esp32emu run my_project.ino
+    esp32emu run --board uno examples/blink.cpp
+    esp32emu run --board mega examples/servo_sweep/servo_sweep.ino
     esp32emu build my_sketch.ino -o my_sketch
 EOF
     exit 1
@@ -42,16 +49,22 @@ ensure_lib() {
 }
 
 cmd_build() {
-    local sketch="$1"; shift
-    local output="${sketch%.ino}"
-    output="${output%.cpp}"
+    local board=""
+    local sketch=""
+    local output=""
 
+    # Parse options
     while [ $# -gt 0 ]; do
         case "$1" in
+            --board|-b) board="$2"; shift 2 ;;
             -o) output="$2"; shift 2 ;;
-            *) echo "Unknown option: $1"; exit 1 ;;
+            -*) echo "Unknown option: $1"; exit 1 ;;
+            *)  [ -z "$sketch" ] && sketch="$1"; shift ;;
         esac
     done
+
+    [ -z "$sketch" ] && usage
+    [ -z "$output" ] && { output="${sketch%.ino}"; output="${output%.cpp}"; }
 
     ensure_lib
 
@@ -67,15 +80,32 @@ cmd_build() {
 }
 
 cmd_run() {
-    local sketch="$1"; shift
+    local board=""
+    local sketch=""
+
+    # Parse options
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            --board|-b) board="$2"; shift 2 ;;
+            --) shift; break ;;
+            -*) echo "Unknown option: $1"; exit 1 ;;
+            *)  sketch="$1"; shift; break ;;
+        esac
+    done
+
+    [ -z "$sketch" ] && usage
+
     local tmpbin
     tmpbin=$(mktemp /tmp/esp32emu_XXXXXX)
 
     # Pass remaining args after --
     local run_args=()
+    if [ -n "$board" ]; then
+        run_args=("--board" "$board")
+    fi
     while [ $# -gt 0 ]; do
         case "$1" in
-            --) shift; run_args=("$@"); break ;;
+            --) shift; run_args+=("$@"); break ;;
             *) shift ;;
         esac
     done
@@ -104,7 +134,7 @@ cmd_test() {
 }
 
 cmd_version() {
-    echo "esp32emu 1.0.0"
+    echo "esp32emu 0.2.0"
 }
 
 [ $# -lt 1 ] && usage

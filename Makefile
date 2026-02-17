@@ -52,12 +52,21 @@ build/test/%: test/%.cpp $(LIB)
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $< -Lbuild -lesp32emu -o $@
 
-# ── Examples ─────────────────────────────────────────────────────────
+# ── Examples (single-file .cpp) ──────────────────────────────────────
 build/examples/%: examples/%.cpp $(LIB)
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $< $(SRCDIR)/esp32emu_main.cpp -Lbuild -lesp32emu -o $@
 
-examples: build/examples/blink build/examples/webserver_demo
+# ── Examples (directory-based .ino) ──────────────────────────────────
+EXAMPLE_DIRS = $(wildcard examples/*/.)
+EXAMPLE_INOS = $(foreach d,$(EXAMPLE_DIRS),$(wildcard $(d:/.=)/*.ino))
+EXAMPLE_BINS = $(foreach ino,$(EXAMPLE_INOS),build/examples/$(notdir $(patsubst %/,%,$(dir $(ino)))))
+
+build/examples/%: examples/%/*.ino $(LIB)
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -x c++ $< $(SRCDIR)/esp32emu_main.cpp -Lbuild -lesp32emu -o $@
+
+examples: build/examples/blink build/examples/webserver_demo $(EXAMPLE_BINS)
 
 # ── Clean ────────────────────────────────────────────────────────────
 clean:
