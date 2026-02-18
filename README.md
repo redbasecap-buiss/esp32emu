@@ -8,7 +8,7 @@
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
-    <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-9-green.svg" alt="Boards"></a>
+    <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-12-green.svg" alt="Boards"></a>
     <a href="#-examples"><img src="https://img.shields.io/badge/Examples-25-orange.svg" alt="Examples"></a>
   </p>
 </p>
@@ -39,7 +39,7 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 📡 **WiFi simulation** — STA/AP mode, connection lifecycle, scan results
 - 🖥️ **Rich Terminal UI** — Colored output, pin visualization, ASCII board diagrams
 - 🎛️ **Servo, LCD, NeoPixel** — Visual mock output in terminal
-- 🏗️ **Multi-board support** — ESP32, ESP32-S3, ESP32-C3, ESP32-S2, ESP32-C6, Arduino Uno, Mega, Nano, RP2040 Pico
+- 🏗️ **Multi-board support** — ESP32, ESP32-S3, ESP32-C3, ESP32-S2, ESP32-C6, ESP32-H2, Arduino Uno, Mega, Nano, RP2040 Pico, Teensy 4.0, STM32 Blue Pill
 - ⚡ **FreeRTOS tasks** — xTaskCreate, mutexes, semaphores backed by std::thread
 - 💾 **SD card & filesystem** — SD, SPIFFS, LittleFS backed by host filesystem
 - 😴 **Deep sleep mock** — Test power management without exiting
@@ -83,7 +83,10 @@ make test
 | **Arduino Mega** | ATmega2560 | 54 | 16 | 8 KB | 256 KB | ❌ | ❌ |
 | **Arduino Nano** | ATmega328P | 14 | 8 | 2 KB | 32 KB | ❌ | ❌ |
 | **ESP32-C6** | ESP32-C6 | 31 | 7 | 512 KB | 4 MB | ✅ WiFi 6 | ✅ BLE 5 |
+| **ESP32-H2** | ESP32-H2 (RISC-V) | 22 | 5 | 320 KB | 4 MB | ❌ | ✅ BLE 5 + Zigbee |
 | **RP2040 Pico** | RP2040 | 30 | 4 | 264 KB | 2 MB | ❌ | ❌ |
+| **Teensy 4.0** | IMXRT1062 | 40 | 14 | 1 MB | 2 MB | ❌ | ❌ |
+| **STM32 Blue Pill** | STM32F103C8 | 37 | 10 | 20 KB | 64 KB | ❌ | ❌ |
 
 > ⚠️ **Arduino boards:** WiFi/Bluetooth calls print a warning and are ignored. Pin limits are enforced per board. `LED_BUILTIN = 13` (vs pin 2 on ESP32).
 

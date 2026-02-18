@@ -30,9 +30,9 @@ int main(int argc, char** argv) {
             board = esp32emu::parseBoardName(argv[++i]);
         } else if (strcmp(argv[i], "--list-boards") == 0) {
             const char* names[] = {"esp32", "esp32-s3", "esp32-c3", "esp32-s2", "esp32-c6",
-                                   "uno", "mega", "nano", "pico"};
+                                   "esp32-h2", "uno", "mega", "nano", "pico", "teensy", "bluepill"};
             fprintf(stdout, "Available boards:\n");
-            for (int j = 0; j < 9; j++) {
+            for (int j = 0; j < 12; j++) {
                 auto& c = esp32emu::getBoardConfig(static_cast<esp32emu::BoardType>(j));
                 fprintf(stdout, "  %-10s  %-14s  %3dMHz  %6dB RAM  %s%s\n",
                         names[j], c.name, c.cpu_freq_mhz, c.ram_bytes,

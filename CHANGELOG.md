@@ -2,6 +2,25 @@
 
 All notable changes to esp32emu are documented here.
 
+## [v0.9.0] — 2026-02-18
+
+### Added
+- **ESP32-H2 board** — RISC-V core at 96MHz, BLE 5.0 + IEEE 802.15.4 (Thread/Zigbee), no WiFi, 22 GPIOs
+- **Teensy 4.0 board** — NXP IMXRT1062 ARM Cortex-M7 at 600MHz, 1MB RAM, 40 digital + 14 analog pins
+- **STM32 Blue Pill board** — STM32F103C8 ARM Cortex-M3 at 72MHz, 20KB RAM, 37 digital + 10 analog pins
+- **ESPAsyncWebServer mock** — Full async web server emulation with route registration, request/response objects, query params, headers, redirects, not-found handler, wildcard URI matching, and `simulateRequest()` test helper
+- **mDNS test** — Test coverage for ESPmDNS mock
+- **SoftwareSerial test** — Test coverage for SoftwareSerial mock with inject/read verification
+- 3 new examples: `async_rest_api` (async JSON API), `teensy_blink` (Teensy 4.0 LED chase), `bluepill_serial` (STM32 serial bridge)
+- ASCII art for all 3 new boards
+- Updated `--list-boards` to include all 12 boards
+
+### Stats
+- **12 boards** (was 9): +ESP32-H2, Teensy 4.0, STM32 Blue Pill
+- **29 library mocks** (was 28): +ESPAsyncWebServer
+- **30 tests** (was 27): +test_asyncwebserver, test_mdns, test_softserial
+- **28 examples** (was 25): +async_rest_api, teensy_blink, bluepill_serial
+
 ## [v0.8.0] — 2026-02-18
 
 ### Added
