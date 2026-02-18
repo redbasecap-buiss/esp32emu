@@ -51,8 +51,8 @@ int main() {
     xTaskCreate(incrementTask, "worker1", 2048, &n, 1, &h1);
     xTaskCreate(incrementTask, "worker2", 2048, &n, 1, &h2);
 
-    // Wait for tasks to finish (50 iterations * 1ms + overhead; generous for slow CI)
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    // Wait for tasks to finish (50 iterations * 1ms + overhead)
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     xSemaphoreTake(mtx, portMAX_DELAY);
     int final_count = counter.load();

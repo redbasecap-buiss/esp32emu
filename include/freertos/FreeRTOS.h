@@ -54,7 +54,7 @@ inline void cleanupTasks() {
     std::lock_guard<std::mutex> lock(taskListMutex());
     for (auto* t : taskList()) {
         t->running = false;
-        if (t->thread.joinable()) t->thread.detach();
+        if (t->thread.joinable()) t->thread.join();
         delete t;
     }
     taskList().clear();
