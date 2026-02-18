@@ -25,6 +25,7 @@ typedef unsigned int UBaseType_t;
 #define portMAX_DELAY 0xFFFFFFFF
 #define configMAX_PRIORITIES 25
 #define portTICK_PERIOD_MS 1
+#define pdMS_TO_TICKS(ms) ((ms) / portTICK_PERIOD_MS)
 #define tskIDLE_PRIORITY 0
 
 // Semaphore / Mutex types

@@ -2,6 +2,22 @@
 
 All notable changes to esp32emu are documented here.
 
+## [v1.4.0] — 2026-02-19
+
+### Added
+- **FastLED library mock** (`FastLED.h`) — WS2812B/APA102 LED strip emulation with `CRGB`, `CHSV`, `hsv2rgb_rainbow`, `fill_rainbow`, `fill_solid`, `fadeToBlackBy`, `nscale8`, brightness control, show counting, and named colors
+- **ArduinoJson v7 mock** (`ArduinoJson.h`) — Full JSON serialize/deserialize with `JsonDocument`, `JsonObject`, `JsonArray`, nested objects/arrays, `serializeJson`/`deserializeJson`, error handling, and `containsKey`
+- **ESP32 TWAI/CAN bus mock** (`driver/twai.h`) — CAN controller emulation with `twai_driver_install/uninstall`, `twai_start/stop`, `twai_transmit/receive`, standard/extended frames, timing configs (25K–1Mbps), filter config, status info, and `twai_test::injectRxMessage()`/`getTxLog()` test helpers
+- 3 new examples: `fastled_rainbow` (rainbow LED animation), `json_api` (REST API with JSON), `can_bus` (CAN frame send/receive)
+
+### Fixed
+- **Ticker test timing flake** — Increased sleep margins in test_ticker to prevent CI failures under load
+
+### Stats
+- **12 boards**, **45 library mocks** (was 42): +FastLED, ArduinoJson, TWAI/CAN
+- **45 tests** (was 42): +test_fastled, test_arduinojson, test_twai
+- **42 examples** (was 39): +fastled_rainbow, json_api, can_bus
+
 ## [v1.3.0] — 2026-02-18
 
 ### Added

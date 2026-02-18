@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-12-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-39-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-42-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -53,7 +53,10 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌡️ **DHT sensor** — DHT11/DHT22 temperature, humidity, heat index
 - 🖥️ **SSD1306 OLED** — 128x64/32 display with pixel buffer, text, shapes
 - 🎮 **MPU6050 IMU** — 6-axis accelerometer/gyroscope, pitch/roll, G-force
-- 🧪 **42 library mocks** — Drop-in replacements for Arduino APIs
+- 🚗 **TWAI/CAN bus** — ESP32 CAN controller mock with TX/RX, filters, test helpers
+- 💡 **FastLED** — WS2812B/APA102 LED strip mock with CRGB, HSV, fill_rainbow
+- 📋 **ArduinoJson** — JSON serialize/deserialize with nested objects, arrays, parser
+- 🧪 **45 library mocks** — Drop-in replacements for Arduino APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
 ## 🚀 Quick Start

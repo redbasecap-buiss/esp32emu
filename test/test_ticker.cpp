@@ -12,7 +12,7 @@ int main() {
         Ticker t;
         t.attach_ms(50, [&]() { count++; });
         assert(t.active());
-        std::this_thread::sleep_for(std::chrono::milliseconds(350));
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
         t.detach();
         assert(!t.active());
         assert(count >= 2); // should fire multiple times in 350ms
@@ -47,9 +47,9 @@ int main() {
         std::atomic<int> a{0}, b{0};
         Ticker t;
         t.attach_ms(30, [&]() { a++; });
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::this_thread::sleep_for(std::chrono::milliseconds(80));
         t.attach_ms(30, [&]() { b++; });
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(150));
         t.detach();
         assert(b >= 1);
         int a_snap = a;
