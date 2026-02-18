@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-12-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-36-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-39-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -50,7 +50,10 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🔧 **Stepper motor** — Position tracking, angle calculation, 2/4-wire support
 - 📡 **IRremote** — Infrared send/receive with NEC, Sony, Samsung, RC5 protocols
 - 🌡️ **BMP280 sensor** — Temperature, pressure, altitude with barometric formula
-- 🧪 **39 library mocks** — Drop-in replacements for Arduino APIs
+- 🌡️ **DHT sensor** — DHT11/DHT22 temperature, humidity, heat index
+- 🖥️ **SSD1306 OLED** — 128x64/32 display with pixel buffer, text, shapes
+- 🎮 **MPU6050 IMU** — 6-axis accelerometer/gyroscope, pitch/roll, G-force
+- 🧪 **42 library mocks** — Drop-in replacements for Arduino APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
 ## 🚀 Quick Start

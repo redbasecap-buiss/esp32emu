@@ -2,6 +2,19 @@
 
 All notable changes to esp32emu are documented here.
 
+## [v1.3.0] — 2026-02-18
+
+### Added
+- **DHT sensor library mock** (`DHT.h`) — DHT11/DHT22/AM2301 temperature & humidity sensor with `readTemperature()` (°C/°F), `readHumidity()`, `computeHeatIndex()` (Rothfusz regression), and `setTemperature()`/`setHumidity()` test helpers
+- **Adafruit SSD1306 OLED display mock** (`Adafruit_SSD1306.h`) — 128x64/128x32 OLED emulation with `drawPixel`, `drawRect`, `fillCircle`, `drawLine`, `drawBitmap`, text rendering (`print`/`println`), pixel buffer, and test helpers (`getPrintedLines()`, `getPixel()`, `getDisplayCount()`, `getDrawCalls()`)
+- **MPU6050 IMU mock** (`MPU6050.h`) — 6-axis accelerometer/gyroscope with `getMotion6()`, individual axis accessors, G-force conversion (±2g), degrees/second conversion (±250°/s), pitch/roll calculation, temperature, and test helpers
+- 3 new examples: `dht_monitor` (DHT22 readings), `oled_dashboard` (SSD1306 system dashboard), `mpu6050_tilt` (tilt angle display)
+
+### Stats
+- **12 boards**, **42 library mocks** (was 39): +DHT, Adafruit_SSD1306, MPU6050
+- **42 tests** (was 39): +test_dht, test_ssd1306, test_mpu6050
+- **39 examples** (was 36): +dht_monitor, oled_dashboard, mpu6050_tilt
+
 ## [v1.2.0] — 2026-02-18
 
 ### Added
