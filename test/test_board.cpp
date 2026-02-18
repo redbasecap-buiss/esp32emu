@@ -14,6 +14,9 @@ int main() {
     assert(parseBoardName("esp32-c3") == BoardType::ESP32_C3);
     assert(parseBoardName("uno") == BoardType::ARDUINO_UNO);
     assert(parseBoardName("mega") == BoardType::ARDUINO_MEGA);
+    assert(parseBoardName("nano") == BoardType::ARDUINO_NANO);
+    assert(parseBoardName("esp32s2") == BoardType::ESP32_S2);
+    assert(parseBoardName("esp32-s2") == BoardType::ESP32_S2);
     assert(parseBoardName("unknown") == BoardType::ESP32); // default
 
     // Test ESP32 config
@@ -53,6 +56,25 @@ int main() {
 
     Board::instance().setBoard(BoardType::ESP32);
     assert(Board::instance().A0_base() == 36);
+
+    // Test ESP32-S2 config
+    auto& s2 = getBoardConfig(BoardType::ESP32_S2);
+    assert(strcmp(s2.name, "ESP32-S2") == 0);
+    assert(s2.has_wifi == true);
+    assert(s2.has_bluetooth == false);
+    assert(s2.digital_pins == 46);
+    assert(s2.cpu_freq_mhz == 240);
+
+    // Test Arduino Nano config
+    auto& nano = getBoardConfig(BoardType::ARDUINO_NANO);
+    assert(strcmp(nano.name, "Arduino Nano") == 0);
+    assert(strcmp(nano.chip, "ATmega328P") == 0);
+    assert(nano.has_wifi == false);
+    assert(nano.analog_pins == 8);
+    assert(nano.builtin_led == 13);
+
+    Board::instance().setBoard(BoardType::ARDUINO_NANO);
+    assert(Board::instance().A0_base() == 14);
 
     printf("test_board: all assertions passed\n");
     return 0;

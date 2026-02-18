@@ -9,8 +9,10 @@ enum class BoardType {
     ESP32,
     ESP32_S3,
     ESP32_C3,
+    ESP32_S2,
     ARDUINO_UNO,
-    ARDUINO_MEGA
+    ARDUINO_MEGA,
+    ARDUINO_NANO
 };
 
 struct BoardConfig {
@@ -29,11 +31,13 @@ struct BoardConfig {
 
 inline const BoardConfig& getBoardConfig(BoardType t) {
     static const BoardConfig configs[] = {
-        {BoardType::ESP32,       "ESP32",        "ESP32",       40, 8,  327680,  4194304, 240, true,  true,  2},
-        {BoardType::ESP32_S3,    "ESP32-S3",     "ESP32-S3",    48, 10, 524288,  8388608, 240, true,  true,  2},
-        {BoardType::ESP32_C3,    "ESP32-C3",     "ESP32-C3",    22, 6,  409600,  4194304, 160, true,  false, 8},
-        {BoardType::ARDUINO_UNO, "Arduino Uno",  "ATmega328P",  14, 6,  2048,    32768,   16,  false, false, 13},
-        {BoardType::ARDUINO_MEGA,"Arduino Mega", "ATmega2560",  54, 16, 8192,    262144,  16,  false, false, 13},
+        {BoardType::ESP32,        "ESP32",        "ESP32",       40, 8,  327680,  4194304, 240, true,  true,  2},
+        {BoardType::ESP32_S3,     "ESP32-S3",     "ESP32-S3",    48, 10, 524288,  8388608, 240, true,  true,  2},
+        {BoardType::ESP32_C3,     "ESP32-C3",     "ESP32-C3",    22, 6,  409600,  4194304, 160, true,  false, 8},
+        {BoardType::ESP32_S2,     "ESP32-S2",     "ESP32-S2",    46, 10, 327680,  4194304, 240, true,  false, 2},
+        {BoardType::ARDUINO_UNO,  "Arduino Uno",  "ATmega328P",  14, 6,  2048,    32768,   16,  false, false, 13},
+        {BoardType::ARDUINO_MEGA, "Arduino Mega", "ATmega2560",  54, 16, 8192,    262144,  16,  false, false, 13},
+        {BoardType::ARDUINO_NANO, "Arduino Nano", "ATmega328P",  14, 8,  2048,    32768,   16,  false, false, 13},
     };
     return configs[static_cast<int>(t)];
 }
@@ -41,8 +45,10 @@ inline const BoardConfig& getBoardConfig(BoardType t) {
 inline BoardType parseBoardName(const std::string& name) {
     if (name == "uno")    return BoardType::ARDUINO_UNO;
     if (name == "mega")   return BoardType::ARDUINO_MEGA;
+    if (name == "nano")   return BoardType::ARDUINO_NANO;
     if (name == "esp32s3" || name == "esp32-s3") return BoardType::ESP32_S3;
     if (name == "esp32c3" || name == "esp32-c3") return BoardType::ESP32_C3;
+    if (name == "esp32s2" || name == "esp32-s2") return BoardType::ESP32_S2;
     return BoardType::ESP32; // default
 }
 
@@ -77,6 +83,7 @@ public:
     int A0_base() const {
         switch (config_->type) {
             case BoardType::ARDUINO_UNO:  return 14; // A0=14..A5=19
+            case BoardType::ARDUINO_NANO: return 14; // A0=14..A7=21
             case BoardType::ARDUINO_MEGA: return 54; // A0=54..A15=69
             default: return 36; // ESP32
         }
@@ -92,10 +99,12 @@ public:
 
     void printASCII() const {
         switch (config_->type) {
-            case BoardType::ARDUINO_UNO: printUnoASCII(); break;
+            case BoardType::ARDUINO_UNO:  printUnoASCII(); break;
             case BoardType::ARDUINO_MEGA: printMegaASCII(); break;
-            case BoardType::ESP32_S3: printESP32S3ASCII(); break;
-            case BoardType::ESP32_C3: printESP32C3ASCII(); break;
+            case BoardType::ARDUINO_NANO: printNanoASCII(); break;
+            case BoardType::ESP32_S3:     printESP32S3ASCII(); break;
+            case BoardType::ESP32_C3:     printESP32C3ASCII(); break;
+            case BoardType::ESP32_S2:     printESP32S2ASCII(); break;
             default: printESP32ASCII(); break;
         }
     }
@@ -165,6 +174,32 @@ private:
     ║  GPIO 0-21  [■■■■■■■■■■]       ║
     ║  PWR  [●]  USB-C [═══]          ║
     ╚══════════════════════════════════╝
+)");
+    }
+
+    void printESP32S2ASCII() const {
+        fprintf(stderr, R"(
+    ╔══════════════════════════════════╗
+    ║          ESP32-S2-SAOLA          ║
+    ║          ┌──────────┐            ║
+    ║          │ ████████ │ WiFi       ║
+    ║          └──────────┘            ║
+    ║  GPIO 0-46  [■■■■■■■■■■■■■]    ║
+    ║  PWR  [●]  USB-C [═══]          ║
+    ╚══════════════════════════════════╝
+)");
+    }
+
+    void printNanoASCII() const {
+        fprintf(stderr, R"(
+    ╔════════════════════════════╗
+    ║       ARDUINO NANO         ║
+    ║       ATmega328P           ║
+    ║                            ║
+    ║  D0-D13  [■■■■■■■■■■■■■■] ║
+    ║  A0-A7   [■■■■■■■■]       ║
+    ║  Mini-USB [═══]            ║
+    ╚════════════════════════════╝
 )");
     }
 };
