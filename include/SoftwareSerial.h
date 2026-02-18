@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <string>
 #include <queue>
+#include <cstring>
 
 class SoftwareSerial {
 public:
