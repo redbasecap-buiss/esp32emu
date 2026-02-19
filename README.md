@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-13-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-62-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-64-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -69,6 +69,9 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌐 **ESP-IDF HTTP client** — `esp_http_client` mock with GET/POST/PUT, headers, event handler, response injection
 - ⚙️ **MCPWM driver** — Motor Control PWM with dual operators, frequency/duty control, start/stop, multi-unit support
 - 📊 **Sigma-Delta modulation** — 8-channel sigma-delta driver with duty/prescale/GPIO configuration
+- 🔀 **FreeRTOS Event Groups** — xEventGroupCreate, SetBits, WaitBits, ClearBits, Sync, cross-thread synchronization
+- 📡 **ESP-IDF WiFi driver** — esp_wifi_init/start/stop/connect/scan, STA/AP config, test helpers
+- 🌐 **ESP-IDF Network Interface** — esp_netif_init, create_default_wifi_sta/ap, IP info, test helpers
 - 🧪 **50+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
