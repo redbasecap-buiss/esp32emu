@@ -6,6 +6,7 @@
 #include <vector>
 #include <mutex>
 #include <algorithm>
+#include <cstring>
 
 #ifndef ESP_OK
 #define ESP_OK   0
