@@ -2,6 +2,22 @@
 
 All notable changes to esp32emu are documented here.
 
+## [v1.5.0] — 2026-02-19
+
+### Added
+- **ESP-IDF logging macros** (`esp_log.h`) — `ESP_LOGE`/`W`/`I`/`D`/`V` with colored terminal output, log level filtering via `esp_log_level_set()`, message counting, and callback hook for test interception
+- **ESP-IDF high-resolution timer** (`esp_timer.h`) — `esp_timer_create`, `start_periodic`, `start_once`, `stop`, `delete`, `esp_timer_get_time()` (microsecond precision), `esp_timer_is_active()`, and `esp_timer_test::getFireCount()`/`resetFireCount()` test helpers
+- **LEDC PWM controller mock** (`esp32emu_ledc.h`) — Full channel state tracking (16 channels), frequency/duty/pin readback, `ledcWriteTone`/`ledcWriteNote` with frequency calculation, and `ledc_test::` helpers (replaces previous inline stubs)
+- 3 new examples: `pwm_fade` (LED fade with LEDC), `esp_log_demo` (logging levels), `esp_timer_blink` (timer-driven blink)
+
+### Improved
+- **LEDC test** — Enhanced from basic smoke test to comprehensive channel state, multi-channel, and writeNote frequency verification
+
+### Stats
+- **12 boards**, **48 library mocks** (was 45): +esp_log, esp_timer, LEDC (full)
+- **47 tests** (was 45): +test_esp_log, test_esp_timer (test_ledc enhanced)
+- **45 examples** (was 42): +pwm_fade, esp_log_demo, esp_timer_blink
+
 ## [v1.4.0] — 2026-02-19
 
 ### Added

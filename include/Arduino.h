@@ -46,35 +46,14 @@ inline long arduino_map(long x,long in_min,long in_max,long out_min,long out_max
 #include "esp32emu_time.h"
 #include "esp32emu_serial.h"
 #include "esp32emu_string.h"
+#include "esp32emu_ledc.h"
 
 inline long random(long mx){return std::rand()%mx;}
 inline long random(long mn,long mx){return mn+std::rand()%(mx-mn);}
 inline void randomSeed(unsigned long s){std::srand(s);}
 inline void yield(){std::this_thread::yield();}
 
-// --- ESP32 LEDC PWM mock ---
-inline double ledcSetup(uint8_t channel, double freq, uint8_t resolution_bits) {
-    (void)channel; (void)resolution_bits;
-    return freq;
-}
-inline void ledcAttachPin(uint8_t pin, uint8_t channel) {
-    (void)pin; (void)channel;
-}
-inline void ledcDetachPin(uint8_t pin) { (void)pin; }
-inline void ledcWrite(uint8_t channel, uint32_t duty) {
-    (void)channel;
-    esp32emu::GPIOController::instance().analogWrite(channel, duty);
-}
-inline uint32_t ledcRead(uint8_t channel) {
-    return esp32emu::GPIOController::instance().analogRead(channel);
-}
-inline double ledcReadFreq(uint8_t channel) { (void)channel; return 5000.0; }
-inline void ledcWriteTone(uint8_t channel, double freq) {
-    (void)channel; (void)freq;
-}
-inline void ledcWriteNote(uint8_t channel, int note, int octave) {
-    (void)channel; (void)note; (void)octave;
-}
+// LEDC PWM is now in esp32emu_ledc.h (included above)
 
 // --- tone / noTone ---
 inline void tone(uint8_t pin, unsigned int frequency, unsigned long duration = 0) {
