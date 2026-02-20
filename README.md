@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-102-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-105-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -268,6 +268,9 @@ The emulator renders rich visual output directly in your terminal:
 | `AHTxx.h` | ✅ | AHT10/AHT20 temperature & humidity |
 | `Adafruit_PWMServoDriver.h` | ✅ | PCA9685 16-channel PWM servo driver |
 | `esp_vfs.h` | ✅ | Virtual File System registration mock |
+| `Update.h` | ✅ | Arduino OTA Update class with progress callbacks |
+| `esp_camera.h` | ✅ | ESP32-CAM camera driver mock with frame injection |
+| `ETH.h` | ✅ | Ethernet interface mock (LAN8720, W5500, etc.) |
 
 ## 🔧 Use as a Library
 
