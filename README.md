@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-13-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-89-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-94-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -98,7 +98,12 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌡️ **AHT10/AHT20 Sensor** — Temperature & humidity sensor mock with error detection
 - 🎛️ **PCA9685 PWM Driver** — 16-channel I2C PWM servo driver with frequency, sleep, microsecond control
 - 📂 **ESP-IDF VFS** — Virtual File System registration/unregistration mock with path prefixes
-- 🧪 **65+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
+- 📏 **VL53L0X ToF Sensor** — Time-of-Flight distance measurement, continuous mode, timing budget, signal quality
+- ⚖️ **HX711 Load Cell** — Load cell amplifier with tare, scale factor, power management, weight calculation
+- 🌡️ **MAX31855 Thermocouple** — K-type thermocouple with internal temp, fault detection (open/short)
+- 🎨 **Adafruit_GFX** — Base graphics library with canvas, primitives, text, rotation, color565
+- 🖥️ **TFT_eSPI** — TFT display library with sprites, drawing primitives, text datum, color definitions
+- 🧪 **70+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
 ## 🚀 Quick Start
