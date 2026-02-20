@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-13-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-76-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-81-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -84,7 +84,12 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🎛️ **ESP-IDF LEDC Driver** — Low-level LEDC timer/channel config, duty control, fade with time, frequency management
 - ⏰ **SNTP Time Sync** — esp_sntp/sntp mock with server config, sync callbacks, host clock integration
 - 🔋 **ADC Calibration** — esp_adc_cal characterize and raw-to-voltage conversion with attenuation/width support
-- 🧪 **55+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
+- 👆 **Touch Pad Driver** — ESP-IDF `driver/touch_pad.h` with FSM modes, thresholds, ISR, filtering, test injection
+- 🔒 **ESP-TLS** — `esp_tls` connection mock for TLS client operations, global CA store
+- 🔐 **HTTPS Server** — `esp_https_server` wrapper with SSL config, delegates to HTTP mock
+- 🎲 **Hardware RNG** — `esp_random` / `esp_fill_random` backed by host PRNG
+- 🏷️ **MAC Address** — `esp_mac` base/interface MAC read, local MAC derivation
+- 🧪 **60+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
 ## 🚀 Quick Start
