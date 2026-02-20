@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <cerrno>
 #include <cstdio>
+#include <fcntl.h>
+#include <poll.h>
 
 WiFiClient::WiFiClient() {}
 WiFiClient::WiFiClient(const char* host, uint16_t port, int fd)
@@ -18,8 +20,6 @@ int WiFiClient::connect(const char* host, uint16_t port) {
 }
 
 int WiFiClient::connect(const char* host, uint16_t port, int timeout_ms) {
-    (void)timeout_ms; // TODO: implement connect timeout
-
     struct addrinfo hints{}, *res;
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
@@ -32,11 +32,34 @@ int WiFiClient::connect(const char* host, uint16_t port, int timeout_ms) {
     fd_ = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
     if (fd_ < 0) { freeaddrinfo(res); return 0; }
 
-    if (::connect(fd_, res->ai_addr, res->ai_addrlen) < 0) {
-        ::close(fd_);
-        fd_ = -1;
-        freeaddrinfo(res);
-        return 0;
+    // Non-blocking connect with timeout
+    if (timeout_ms > 0) {
+        int flags = fcntl(fd_, F_GETFL, 0);
+        fcntl(fd_, F_SETFL, flags | O_NONBLOCK);
+
+        int rc = ::connect(fd_, res->ai_addr, res->ai_addrlen);
+        if (rc < 0 && errno == EINPROGRESS) {
+            struct pollfd pfd{};
+            pfd.fd = fd_;
+            pfd.events = POLLOUT;
+            rc = poll(&pfd, 1, timeout_ms);
+            if (rc <= 0) {
+                ::close(fd_); fd_ = -1; freeaddrinfo(res); return 0;
+            }
+            int err = 0; socklen_t len = sizeof(err);
+            getsockopt(fd_, SOL_SOCKET, SO_ERROR, &err, &len);
+            if (err != 0) {
+                ::close(fd_); fd_ = -1; freeaddrinfo(res); return 0;
+            }
+        } else if (rc < 0) {
+            ::close(fd_); fd_ = -1; freeaddrinfo(res); return 0;
+        }
+        // Restore blocking mode
+        fcntl(fd_, F_SETFL, flags);
+    } else {
+        if (::connect(fd_, res->ai_addr, res->ai_addrlen) < 0) {
+            ::close(fd_); fd_ = -1; freeaddrinfo(res); return 0;
+        }
     }
 
     freeaddrinfo(res);
