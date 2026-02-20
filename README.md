@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-108-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-111-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -102,6 +102,9 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌡️ **SHT31 Sensor** — Temperature/humidity with heater control, status register, dual readout
 - 📬 **AsyncMqttClient** — Async MQTT client mock with connect, pub/sub, QoS, message injection, callbacks
 - 🔐 **CRT Bundle** — `esp_crt_bundle_attach` stub for HTTPS certificate bundle compatibility
+- 📏 **Adafruit Unified Sensor** — Abstract sensor interface (`Adafruit_Sensor`), `sensors_event_t`, `sensor_t`, used by BME280/BME680/etc.
+- 🔌 **MCP23017 GPIO Expander** — 16-bit I2C GPIO expander, port A/B, pull-ups, interrupts, polarity inversion
+- 📊 **ADS1115 ADC** — 16-bit 4-channel I2C ADC, single-ended/differential, programmable gain, voltage computation
 - 🌡️ **BME280 Sensor** — Temperature, humidity, pressure, altitude with configurable sampling modes
 - 🌡️ **AHT10/AHT20 Sensor** — Temperature & humidity sensor mock with error detection
 - 🎛️ **PCA9685 PWM Driver** — 16-channel I2C PWM servo driver with frequency, sleep, microsecond control
