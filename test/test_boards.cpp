@@ -41,7 +41,16 @@ int main() {
     assert(bp.cpu_freq_mhz == 72);
     assert(!bp.has_wifi && !bp.has_bluetooth);
 
+    auto& p4 = getBoardConfig(BoardType::ESP32_P4);
+    assert(strcmp(p4.name, "ESP32-P4") == 0);
+    assert(p4.cpu_freq_mhz == 400);
+    assert(p4.has_wifi && p4.has_bluetooth);
+    assert(p4.digital_pins == 55);
+    assert(p4.ram_bytes == 786432);
+
     // Test board name parsing
+    assert(parseBoardName("esp32p4") == BoardType::ESP32_P4);
+    assert(parseBoardName("esp32-p4") == BoardType::ESP32_P4);
     assert(parseBoardName("esp32-c6") == BoardType::ESP32_C6);
     assert(parseBoardName("esp32c6") == BoardType::ESP32_C6);
     assert(parseBoardName("esp32-h2") == BoardType::ESP32_H2);
