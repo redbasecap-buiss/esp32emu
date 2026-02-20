@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-13-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-94-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-98-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -78,6 +78,7 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 📦 **Partition Table** — esp_partition find/read/write/erase with default partition layout
 - 🔄 **OTA Updates** — esp_ota begin/write/end, boot partition management, app description
 - 🎵 **ESP-IDF I2S Driver** — Legacy I2S API with install/uninstall, TX/RX, pin config, sample rate
+- ⚡ **INA219 Current Sensor** — Bus voltage, shunt voltage, current, power measurement with calibration modes
 - 📡 **ESP-IDF MQTT Client** — `esp_mqtt_client` with connect, publish, subscribe, QoS, event callbacks, test injection
 - ⏱️ **GPTimer (v5 API)** — General purpose timer with alarm, auto-reload, count up/down, event callbacks
 - 💾 **ESP-IDF SPIFFS** — `esp_vfs_spiffs` register/unregister, info, format, mount state tracking
