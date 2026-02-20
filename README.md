@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-111-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-116-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -114,7 +114,12 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌡️ **MAX31855 Thermocouple** — K-type thermocouple with internal temp, fault detection (open/short)
 - 🎨 **Adafruit_GFX** — Base graphics library with canvas, primitives, text, rotation, color565
 - 🖥️ **TFT_eSPI** — TFT display library with sprites, drawing primitives, text datum, color definitions
-- 🧪 **70+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
+- 🔄 **Encoder** — Rotary encoder library mock with position read/write, delta rotation
+- ⚙️ **AccelStepper** — Acceleration-based stepper motor control with speed, position, run-to-target
+- 🖼️ **U8g2** — Universal graphics library for OLEDs/LCDs with text, shapes, XBM, page/buffer modes
+- 🖥️ **ESP-IDF LCD Driver** — `esp_lcd` panel API for ST7789, SSD1306 with SPI/I2C IO, bitmap draw, mirror/swap
+- 🔋 **RTC IO Driver** — RTC GPIO init, direction, level, pull-up/down, hold for deep sleep wakeup
+- 🧪 **75+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
 ## 🚀 Quick Start
