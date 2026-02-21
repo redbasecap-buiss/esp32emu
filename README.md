@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-121-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-124-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -85,6 +85,9 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🔌 **ESP-IDF UART Driver** — UART port config, TX/RX with buffered data, multi-port, test injection
 - 🔐 **ESP eFuse** — Chip revision, block read/write, key blocks, test helpers
 - 📡 **SoftwareSerial** — Bit-banged serial mock with RX injection, multi-instance support
+- 🌐 **WiFiManager** — Captive portal WiFi provisioning mock with parameters, callbacks, portal simulation
+- 🔗 **AsyncTCP** — Async TCP client/server mock (me-no-dev compatible) with data injection, callbacks
+- 🔄 **ESP HTTPS OTA** — HTTPS firmware update mock with progress tracking, begin/perform/finish API
 - ⚡ **INA219 Current Sensor** — Bus voltage, shunt voltage, current, power measurement with calibration modes
 - 📡 **ESP-IDF MQTT Client** — `esp_mqtt_client` with connect, publish, subscribe, QoS, event callbacks, test injection
 - ⏱️ **GPTimer (v5 API)** — General purpose timer with alarm, auto-reload, count up/down, event callbacks
