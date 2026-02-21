@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-128-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-131-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -78,6 +78,9 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 📦 **Partition Table** — esp_partition find/read/write/erase with default partition layout
 - 🔄 **OTA Updates** — esp_ota begin/write/end, boot partition management, app description
 - 🎵 **ESP-IDF I2S Driver** — Legacy I2S API with install/uninstall, TX/RX, pin config, sample rate
+- 📋 **cJSON** — ESP-IDF native JSON library: create, parse, print, iterate, modify objects and arrays
+- 🧠 **Heap Caps** — `heap_caps_malloc/free/realloc`, free size queries, PSRAM/DMA/internal caps, `multi_heap_info_t`
+- 🔐 **mbedTLS** — SHA-256 hash (one-shot + streaming), HMAC, Base64 encode/decode for crypto workflows
 - 📺 **ILI9341 TFT Display** — 240x320 SPI display mock with pixels, shapes, text, rotation, framebuffer readback
 - 🌡️ **MAX6675 Thermocouple** — K-type thermocouple sensor, Celsius/Fahrenheit, test injection
 - 📦 **FreeRTOS Stream Buffers** — xStreamBufferCreate, Send, Receive, ISR variants, message buffers
