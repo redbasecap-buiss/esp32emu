@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-154-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-160-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -153,6 +153,11 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌬️ **CCS811 Air Quality** — eCO2/TVOC readings, drive modes, baseline calibration, environmental compensation
 - 📡 **RCSwitch 433MHz RF** — Transmit/receive codes, protocol config, switch helpers (Type A/B)
 - 🧲 **AS5600 Rotary Encoder** — 12-bit angle, degrees, magnet status, AGC, cumulative position, direction
+- ☀️ **Adafruit LTR390** — UV index and ambient light sensor, gain/resolution config, lux/UVI calculation
+- 🎨 **Adafruit NeoMatrix** — NeoPixel matrix layouts with GFX integration, tiled matrices, pixel mapping
+- 🧭 **QMC5883L Magnetometer** — 3-axis compass, heading calculation, calibration offsets, temperature readout
+- ⚙️ **DRV8825 Stepper Driver** — STEP/DIR stepper control, microstepping, RPM, angle/position tracking
+- 💾 **SDMMC/SDSPI Host Drivers** — ESP-IDF `sdmmc_host.h` and `sdspi_host.h` for SD card host initialization
 - 🧪 **80+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
