@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-131-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-135-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -133,7 +133,12 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🖼️ **U8g2** — Universal graphics library for OLEDs/LCDs with text, shapes, XBM, page/buffer modes
 - 🖥️ **ESP-IDF LCD Driver** — `esp_lcd` panel API for ST7789, SSD1306 with SPI/I2C IO, bitmap draw, mirror/swap
 - 🔋 **RTC IO Driver** — RTC GPIO init, direction, level, pull-up/down, hold for deep sleep wakeup
-- 🧪 **75+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
+- 🔐 **mbedTLS AES** — AES-128/192/256 ECB/CBC encryption/decryption mock with roundtrip support
+- 🎲 **mbedTLS Entropy + CTR-DRBG** — Cryptographic RNG mock with seeding, entropy sources
+- 🔌 **PCF8574 I/O Expander** — 8-bit I2C GPIO expander with pin read/write, toggle, port operations
+- 🌿 **SGP30 Air Quality** — TVOC/eCO2 sensor with baseline calibration, humidity compensation, raw signals
+- 💾 **ESP Flash API** — `esp_flash` read/write/erase with realistic AND-only write behavior, sector erase
+- 🧪 **80+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
 ## 🚀 Quick Start
