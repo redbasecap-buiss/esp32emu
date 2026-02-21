@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-145-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-150-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -78,6 +78,11 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 📦 **Partition Table** — esp_partition find/read/write/erase with default partition layout
 - 🔄 **OTA Updates** — esp_ota begin/write/end, boot partition management, app description
 - 🎵 **ESP-IDF I2S Driver** — Legacy I2S API with install/uninstall, TX/RX, pin config, sample rate
+- 🧭 **BNO055 9-DOF IMU** — Absolute orientation, Euler angles, quaternion, accel/gyro/mag, calibration
+- 🌡️ **SHTC3 sensor** — Compact humidity/temperature with sleep/wake, °C/°F, raw data access
+- 🎵 **I2S v5 Standard Mode** — New ESP-IDF v5 channel API with TX/RX, write/read, enable/disable
+- 🎶 **DAC Cosine Generator** — Hardware cosine waveform output with frequency, attenuation, phase control
+- 🧵 **esp_pthread** — Thread configuration: stack size, priority, core pinning
 - 📋 **cJSON** — ESP-IDF native JSON library: create, parse, print, iterate, modify objects and arrays
 - 🧠 **Heap Caps** — `heap_caps_malloc/free/realloc`, free size queries, PSRAM/DMA/internal caps, `multi_heap_info_t`
 - 🔐 **mbedTLS** — SHA-256 hash (one-shot + streaming), HMAC, Base64 encode/decode for crypto workflows
