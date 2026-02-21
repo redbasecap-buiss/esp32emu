@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-150-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-154-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -82,6 +82,11 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🌡️ **SHTC3 sensor** — Compact humidity/temperature with sleep/wake, °C/°F, raw data access
 - 🎵 **I2S v5 Standard Mode** — New ESP-IDF v5 channel API with TX/RX, write/read, enable/disable
 - 🎶 **DAC Cosine Generator** — Hardware cosine waveform output with frequency, attenuation, phase control
+- 🔧 **ESP32Servo** — Servo motor control with attach/detach, angle/microsecond write, custom pulse range
+- ❤️ **MAX30105 Pulse Oximeter** — IR/Red/Green LED readings, temperature, beat detection, SpO2 helpers
+- 📊 **ADS1015 12-bit ADC** — 4-channel single-ended/differential, programmable gain, voltage computation
+- 🏋️ **BMI270 6-axis IMU** — Accelerometer/gyroscope, step counter, I2C/SPI init, configurable ODR/range
+- 🔒 **mbedTLS SSL** — SSL context/config, handshake, read/write, ciphersuite query, client/server mock
 - 🧵 **esp_pthread** — Thread configuration: stack size, priority, core pinning
 - 📋 **cJSON** — ESP-IDF native JSON library: create, parse, print, iterate, modify objects and arrays
 - 🧠 **Heap Caps** — `heap_caps_malloc/free/realloc`, free size queries, PSRAM/DMA/internal caps, `multi_heap_info_t`
