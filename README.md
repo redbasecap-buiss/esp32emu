@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-14-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-160-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-164-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -78,6 +78,11 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 📦 **Partition Table** — esp_partition find/read/write/erase with default partition layout
 - 🔄 **OTA Updates** — esp_ota begin/write/end, boot partition management, app description
 - 🎵 **ESP-IDF I2S Driver** — Legacy I2S API with install/uninstall, TX/RX, pin config, sample rate
+- 💡 **VEML7700 Light Sensor** — Ambient light (lux), ALS, white channel, gain/integration time, power save
+- ☀️ **VEML6075 UV Sensor** — UVA, UVB, UV Index, integration time, high dynamic mode
+- 🌡️ **MAX31865 RTD Sensor** — PT100/PT1000 temperature, fault detection, 2/3/4-wire, bias control
+- 🌡️ **SI7021 Temp & Humidity** — Temperature, humidity, heater control, resolution settings
+- 🔌 **MCP4725 DAC** — 12-bit DAC output, EEPROM save, voltage float helpers, power-down modes
 - 🧭 **BNO055 9-DOF IMU** — Absolute orientation, Euler angles, quaternion, accel/gyro/mag, calibration
 - 🌡️ **SHTC3 sensor** — Compact humidity/temperature with sleep/wake, °C/°F, raw data access
 - 🎵 **I2S v5 Standard Mode** — New ESP-IDF v5 channel API with TX/RX, write/read, enable/disable
