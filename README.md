@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-15-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-172-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-177-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -78,6 +78,11 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 📦 **Partition Table** — esp_partition find/read/write/erase with default partition layout
 - 🔄 **OTA Updates** — esp_ota begin/write/end, boot partition management, app description
 - 🎵 **ESP-IDF I2S Driver** — Legacy I2S API with install/uninstall, TX/RX, pin config, sample rate
+- 🔘 **OneButton** — Click, double-click, long press, multi-click with debouncing
+- 🚌 **MCP2515 CAN Bus** — SPI-based CAN controller with TX/RX, loopback, filters, error counters
+- 🕐 **DS3231 RTC** — Real-time clock with alarms, temperature, lost power detection
+- 🎛️ **AceButton** — Event-driven button handling with configurable features, multi-button support
+- ⏱️ **TaskScheduler** — Cooperative multitasking with intervals, iterations, enable/disable callbacks
 - 💡 **VEML7700 Light Sensor** — Ambient light (lux), ALS, white channel, gain/integration time, power save
 - ☀️ **VEML6075 UV Sensor** — UVA, UVB, UV Index, integration time, high dynamic mode
 - 🌡️ **MAX31865 RTD Sensor** — PT100/PT1000 temperature, fault detection, 2/3/4-wire, bias control
