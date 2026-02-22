@@ -2,6 +2,17 @@
 
 All notable changes to esp32emu are documented here.
 
+## [v1.9.0] — 2026-02-22
+
+### Added
+- **Adafruit ST7789** TFT display mock — 240×320 SPI TFT with framebuffer, pixel read-back, rotation, invert, sleep, color565, HLine/VLine
+- **MAX17048** LiPo fuel gauge mock — voltage, SOC, charge rate, alert threshold (1-32%), hibernate/sleep modes, quick start, reset
+- **Adafruit LC709203F** battery fuel gauge mock — voltage, SOC, pack size/APA, power modes, temperature modes, RSOC alarm, cell profile, thermistor B
+- **Adafruit LSM9DS1** 9-DOF IMU mock — accelerometer, gyroscope, magnetometer with configurable ranges/gains/scales, event API, temperature
+- **Adafruit TCS34725** color sensor mock — RGB+clear raw data, lux calculation, color temperature (McCamy's), gain/integration time, interrupt/limits
+- 5 new examples: st7789_demo, max17048_demo, lc709203f_demo, lsm9ds1_demo, tcs34725_demo
+- Total: 207 tests, 205 examples
+
 ## [v1.8.0] — 2026-02-22
 
 ### Added

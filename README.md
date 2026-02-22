@@ -9,7 +9,7 @@
     <a href="#"><img src="https://img.shields.io/badge/C++-17-blue.svg?logo=cplusplus" alt="C++17"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg" alt="Platform"></a>
     <a href="#-supported-boards"><img src="https://img.shields.io/badge/Boards-15-green.svg" alt="Boards"></a>
-    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-200-orange.svg" alt="Examples"></a>
+    <a href="#-examples"><img src="https://img.shields.io/badge/Examples-205-orange.svg" alt="Examples"></a>
   </p>
 </p>
 
@@ -187,6 +187,11 @@ Run your ESP32 and Arduino sketches on macOS or Linux. The HTTP server listens o
 - 🏋️ **LSM6DS IMU Family** — LSM6DSO/DSOX/DS33 6-axis accelerometer/gyroscope, configurable range/rate, event API
 - 🔌 **MCP4728 4-ch DAC** — 12-bit quad DAC with channel set, fast write, VREF/gain config, EEPROM save
 - 🔗 **USB Serial/JTAG** — ESP32-S3/C3 USB Serial/JTAG driver mock with read/write, RX injection, install/uninstall
+- 🖥️ **ST7789 TFT Display** — 240×320 SPI TFT with framebuffer, rotation, sleep, color565, pixel read-back
+- 🔋 **MAX17048 Fuel Gauge** — LiPo battery monitor with voltage, SOC, charge rate, alert threshold, hibernate/sleep
+- 🔋 **LC709203F Fuel Gauge** — Battery gauge with RSOC, pack size, power/temperature modes, alarm config
+- 🧭 **LSM9DS1 9-DOF IMU** — Accelerometer, gyroscope, magnetometer with configurable ranges and event API
+- 🌈 **TCS34725 Color Sensor** — RGB color sensor with lux/color temperature calculation, gain/integration control
 - 🧪 **80+ library mocks** — Drop-in replacements for Arduino and ESP-IDF APIs
 - 📦 **Zero dependencies** — Only C++ stdlib + POSIX
 
