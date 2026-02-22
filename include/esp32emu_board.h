@@ -21,7 +21,8 @@ enum class BoardType {
     ESP32_C2,
     ESP32_P4,
     ESP32_C5,
-    XIAO_ESP32S3
+    XIAO_ESP32S3,
+    FEATHER_ESP32S3
 };
 
 struct BoardConfig {
@@ -56,6 +57,7 @@ inline const BoardConfig& getBoardConfig(BoardType t) {
         {BoardType::ESP32_P4,     "ESP32-P4",     "ESP32-P4",    55, 12, 786432, 16777216, 400, true,  true,  2},
         {BoardType::ESP32_C5,     "ESP32-C5",     "ESP32-C5",    29, 6,  524288,  4194304, 240, true,  true,  8},
         {BoardType::XIAO_ESP32S3, "XIAO ESP32-S3","ESP32-S3",   11, 9,  524288,  8388608, 240, true,  true,  21},
+        {BoardType::FEATHER_ESP32S3, "Feather ESP32-S3","ESP32-S3", 21, 6, 524288, 8388608, 240, true, true, 13},
     };
     return configs[static_cast<int>(t)];
 }

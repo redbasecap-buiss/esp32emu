@@ -20,3 +20,6 @@ SPIClass SPI;
 MDNSResponder MDNS;
 UpdateClass Update;
 ETHClass ETH;
+
+#include "ElegantOTA.h"
+ElegantOTAClass ElegantOTA;
