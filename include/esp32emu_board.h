@@ -20,7 +20,8 @@ enum class BoardType {
     STM32_BLUEPILL,
     ESP32_C2,
     ESP32_P4,
-    ESP32_C5
+    ESP32_C5,
+    XIAO_ESP32S3
 };
 
 struct BoardConfig {
@@ -54,6 +55,7 @@ inline const BoardConfig& getBoardConfig(BoardType t) {
         {BoardType::ESP32_C2,     "ESP32-C2",     "ESP32-C2",    20, 5,  272384,  4194304, 120, true,  true,  8},
         {BoardType::ESP32_P4,     "ESP32-P4",     "ESP32-P4",    55, 12, 786432, 16777216, 400, true,  true,  2},
         {BoardType::ESP32_C5,     "ESP32-C5",     "ESP32-C5",    29, 6,  524288,  4194304, 240, true,  true,  8},
+        {BoardType::XIAO_ESP32S3, "XIAO ESP32-S3","ESP32-S3",   11, 9,  524288,  8388608, 240, true,  true,  21},
     };
     return configs[static_cast<int>(t)];
 }
@@ -73,6 +75,7 @@ inline BoardType parseBoardName(const std::string& name) {
     if (name == "esp32c2" || name == "esp32-c2") return BoardType::ESP32_C2;
     if (name == "esp32p4" || name == "esp32-p4") return BoardType::ESP32_P4;
     if (name == "esp32c5" || name == "esp32-c5") return BoardType::ESP32_C5;
+    if (name == "xiao" || name == "xiao-s3" || name == "xiao-esp32s3") return BoardType::XIAO_ESP32S3;
     return BoardType::ESP32; // default
 }
 
@@ -140,6 +143,7 @@ public:
             case BoardType::ESP32_C2:     printESP32C2ASCII(); break;
             case BoardType::ESP32_P4:     printESP32P4ASCII(); break;
             case BoardType::ESP32_C5:     printESP32C5ASCII(); break;
+            case BoardType::XIAO_ESP32S3: printXIAOESP32S3ASCII(); break;
             default: printESP32ASCII(); break;
         }
     }
@@ -331,6 +335,21 @@ private:
     ║  GPIO 0-28  [■■■■■■■■■■■]      ║
     ║  PWR  [●]  USB-C [═══]          ║
     ╚══════════════════════════════════╝
+)");
+    }
+
+    void printXIAOESP32S3ASCII() const {
+        fprintf(stderr, R"(
+    ╔═══════════════════════════════╗
+    ║     SEEED XIAO ESP32-S3      ║
+    ║     ┌────────────────┐       ║
+    ║     │  ◉  ESP32-S3   │       ║
+    ║     │    WiFi/BT5    │       ║
+    ║     └────────────────┘       ║
+    ║  D0-D10 [■■■■■■■■■■■]       ║
+    ║  A0-A8  [■■■■■■■■■]         ║
+    ║  USB-C [═══]  BOOT [●]      ║
+    ╚═══════════════════════════════╝
 )");
     }
 
